@@ -30,13 +30,20 @@ class DocumentosController {
         res.json({message: 'Tipo documento registrado'}); 
     }
 
-    public delete (req: Request, res: Response) {
-        res.json({text: 'Eliminando el tipo de Documento ' + req.params.id});
+    public async delete (req: Request, res: Response): Promise<void> {
+        //res.json({text: 'Eliminando el tipo de Documento ' + req.params.id});
+        const { id } = req.params;
+        await pool.query('delete from tiposdocumento where id = ?', [id]);
+        res.json({Message: ' Se elimino al tipo de Documento'});
     }
 
-    public async update (req: Request, res: Response) {
+    public async update (req: Request, res: Response): Promise<void> {
         //res.json({text: 'Actualizando tipo de Documento ' + req.params.id});
-        //await pool.query('update tiposdocumento set TipoDocumento s')
+        const { id } = req.params;
+        console.log(req.body);  
+        await pool.query('update tiposdocumento set ? where Id = ?', [req.body, id]);
+        //await pool.query('update tiposdocumento set ? where Id = 2', [req.body]);
+        res.json({Message: ' Se actualizó Tipo Documento'});
     }
 }
 

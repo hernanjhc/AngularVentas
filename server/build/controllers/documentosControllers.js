@@ -45,12 +45,21 @@ class DocumentosController {
         });
     }
     delete(req, res) {
-        res.json({ text: 'Eliminando el tipo de Documento ' + req.params.id });
+        return __awaiter(this, void 0, void 0, function* () {
+            //res.json({text: 'Eliminando el tipo de Documento ' + req.params.id});
+            const { id } = req.params;
+            yield database_1.default.query('delete from tiposdocumento where id = ?', [id]);
+            res.json({ Message: ' Se elimino al tipo de Documento' });
+        });
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             //res.json({text: 'Actualizando tipo de Documento ' + req.params.id});
-            //await pool.query('update tiposdocumento set TipoDocumento s')
+            const { id } = req.params;
+            console.log(req.body);
+            yield database_1.default.query('update tiposdocumento set ? where Id = ?', [req.body, id]);
+            //await pool.query('update tiposdocumento set ? where Id = 2', [req.body]);
+            res.json({ Message: ' Se actualizó Tipo Documento' });
         });
     }
 }
