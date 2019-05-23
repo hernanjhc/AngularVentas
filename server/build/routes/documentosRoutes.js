@@ -12,7 +12,11 @@ class DocumentosRoutes {
     }
     config() {
         //this.router.get('/', (req, res) => res.send('Documentos'));
-        this.router.get('/', documentosControllers_1.default.index);
+        this.router.get('/', documentosControllers_1.default.list);
+        this.router.get('/:id', documentosControllers_1.default.getOne);
+        this.router.post('/', documentosControllers_1.default.create);
+        this.router.put('/:id', documentosControllers_1.default.update);
+        this.router.delete('/:id', documentosControllers_1.default.delete);
     }
 }
 const documentosRoutes = new DocumentosRoutes();
