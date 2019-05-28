@@ -1,7 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { TiposDocumentoListComponent } from './components/tipos-documento-list/tipos-documento-list.component';
+import { TiposDocumentoFormComponent } from './components/tipos-documento-form/tipos-documento-form.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/TiposDocumento',
+    pathMatch: 'full'
+  },
+  {
+    path: 'TiposDocumento',
+    component: TiposDocumentoListComponent
+  },
+  {
+    path: 'TiposDocumento/add',
+    component: TiposDocumentoFormComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

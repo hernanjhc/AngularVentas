@@ -1,0 +1,23 @@
+<div class="col-md-4 offset-md-4">
+  <div class="card">
+    <div class="card-body">
+      <form> 
+        <div class="form-group">
+          <input type="text" name ="id" [(ngModel)]="tipoDocumento.Id" placeholder="Id" class="form-control" autofocus>
+        </div>
+        <div class="form-group">
+          <input type="text" name ="tipoDocumento" [(ngModel)]="tipoDocumento.TipoDocumento" placeholder="TipoDocumento" class="form-control" autofocus>
+        </div>
+        <button class="btn btn-success btn-block" (click)="saveNewTipoDocumento()">
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-body text-center">
+    <h3> {{tipoDocumento.Id}}. {{tipoDocumento.TipoDocumento == '' ? 'TipoDocumento' : tipoDocumento.TipoDocumento}}    </h3>
+  </div>
+</div>

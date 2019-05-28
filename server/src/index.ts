@@ -21,7 +21,7 @@ class Server    {
     }
     routes(): void{
         this.app.use('/', indexRoutes);//this.app.use(indexRoutes);
-        this.app.use('/api/documentos', documentosRoutes);
+        this.app.use('/api/TiposDocumento', documentosRoutes);
     }
     start(): void{
         this.app.listen(this.app.get('port'), ()=> {
