@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'TiposDocumento/add',
     component: TiposDocumentoFormComponent
+  },
+  {
+    path: 'TiposDocumento/edit/:id',
+    component: TiposDocumentoFormComponent
   }
 ];
 

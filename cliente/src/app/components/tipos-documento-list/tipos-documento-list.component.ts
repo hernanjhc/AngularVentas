@@ -38,4 +38,5 @@ export class TiposDocumentoListComponent implements OnInit {
       err => console.log(err)
     )
   }
+  
 }

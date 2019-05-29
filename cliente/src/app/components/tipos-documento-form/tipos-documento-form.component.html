@@ -8,7 +8,7 @@
         <div class="form-group">
           <input type="text" name ="tipoDocumento" [(ngModel)]="tipoDocumento.TipoDocumento" placeholder="TipoDocumento" class="form-control" autofocus>
         </div>
-        <button class="btn btn-success btn-block" (click)="saveNewTipoDocumento()">
+        <button class="btn btn-success btn-block" (click)="edit ?  editTipoDocumento() : saveNewTipoDocumento()">
           Save
         </button>
       </form>

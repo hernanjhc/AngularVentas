@@ -2,6 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 //import { TiposDocumento } from 'src/app/models/TiposDocumento';
 import { TiposDocumento } from '../../models/TiposDocumento';
 import { TiposDocumentoService } from '../../services/tipos-documento.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tipos-documento-form',
@@ -17,11 +18,26 @@ export class TiposDocumentoFormComponent implements OnInit {
     TipoDocumento:''
   };
 
-  constructor(private tiposDocumentoService: TiposDocumentoService) {
+  edit: boolean = false;
+
+  constructor(private tiposDocumentoService: TiposDocumentoService, private router: Router, private activatedroute: ActivatedRoute) {
 
    }
 
   ngOnInit() {
+    const params = this.activatedroute.snapshot.params;
+    console.log(params);
+    if(params.id){
+      this.tiposDocumentoService.getTipoDocumento(params.id)
+      .subscribe(
+        res => {
+          console.log(res);
+          this.tipoDocumento = res;
+          this.edit = true;
+        },
+        err => console.error(err)
+      )
+    }
   }
   saveNewTipoDocumento(){
     //console.log(this.tipoDocumento);
@@ -29,9 +45,22 @@ export class TiposDocumentoFormComponent implements OnInit {
     this.tiposDocumentoService.saveTipoDocumento(this.tipoDocumento).subscribe(
       res => {
         console.log(res);
+        this.router.navigate(['/TiposDocumento']);
       },
       err => console.error(err)
     )
+  }
+
+  editTipoDocumento(){
+    this.tiposDocumentoService.updateTipoDocumento(this.tipoDocumento.Id, this.tipoDocumento)
+      .subscribe(
+        res => {
+          console.log(res);
+          this.router.navigate(['/TiposDocumento']);
+        },
+        err => console.error(err)
+      )
+  
   }
 
 }

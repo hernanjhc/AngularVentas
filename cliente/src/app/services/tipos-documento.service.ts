@@ -29,7 +29,7 @@ export class TiposDocumentoService {
     return this.http.delete(`${this.API_URL}/TiposDocumento/${id}`);
   }
 
-  updateTipoDocumento(id: string, updateTipoDocumento: TiposDocumento): Observable<TiposDocumento> {
-    return this.http.put('${this.API_URL}/TiposDocumento ${id}', this.updateTipoDocumento);
+  updateTipoDocumento(id: string|number, updateTipoDocumento: TiposDocumento): Observable<TiposDocumento> {
+    return this.http.put(`${this.API_URL}/TiposDocumento/${id}`, updateTipoDocumento);
   }
 }

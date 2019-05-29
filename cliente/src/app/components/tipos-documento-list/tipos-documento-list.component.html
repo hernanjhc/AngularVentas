@@ -9,7 +9,7 @@
     </div>      
     <div class="card-body"> 
         <p>{{td.TipoDocumento}}</p>
-        <a href="" class="btn btn-info btn-block">
+        <a [routerLink]="['/TiposDocumento/edit', td.Id]" class="btn btn-info btn-block" (click)="editTipoDocumento(td.Id)">
           EDITAR
         </a>
     </div>
