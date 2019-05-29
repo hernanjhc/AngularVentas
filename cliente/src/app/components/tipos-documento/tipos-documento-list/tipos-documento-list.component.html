@@ -1,0 +1,44 @@
+<!-- tipos-documento-list works! -->
+<!--
+<div class="col-md-4" *ngFor="let td of tiposDocumento">
+  <div class="card text-center">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        Código {{td.Id}}
+        <button class="btn btn-danger" (click)="deleteTipoDocumento(td.Id)">
+          <i class="far fa-trash-alt"></i>
+        </button>
+    </div>      
+    <div class="card-body"> 
+        <p>{{td.TipoDocumento}}</p>
+        <a [routerLink]="['/TiposDocumento/edit', td.Id]" class="btn btn-info btn-block" (click)="editTipoDocumento(td.Id)">
+          EDITAR
+        </a>
+    </div>
+  </div>
+</div>            -->
+
+<section class="row mt-5">
+  <div class="col">
+    <br>
+    <a [routerLink]="['/TiposDocumento/add']" class="btn btn-primary float-right mb-3">Nuevo</a>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Tipo Documento</th>
+          <th scope="col">&nbsp;</th>
+          <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let td of tiposDocumento, index as i">
+          <!--<th scope="row">{{i+1}}</th>-->
+          <td>{{td.Id}}</td>
+          <td>{{td.TipoDocumento}}</td>
+          <td>  <a [routerLink]="['/TiposDocumento/edit', td.Id]" class="btn btn-info btn-block" (click)="editTipoDocumento(td.Id)">Editar</a>  </td>
+          <td>  <button class="btn btn-danger" (click)="deleteTipoDocumento(td.Id)">Eliminar</button> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

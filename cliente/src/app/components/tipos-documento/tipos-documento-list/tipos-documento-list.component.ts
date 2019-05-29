@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 
-import { TiposDocumentoService } from '../../services/tipos-documento.service';
+import { TiposDocumentoService } from '../../../services/tipos-documento.service';
 import { TiposDocumento } from 'src/app/models/TiposDocumento';
 
 @Component({

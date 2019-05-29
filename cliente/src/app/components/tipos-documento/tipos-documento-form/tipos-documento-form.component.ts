@@ -1,7 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 //import { TiposDocumento } from 'src/app/models/TiposDocumento';
-import { TiposDocumento } from '../../models/TiposDocumento';
-import { TiposDocumentoService } from '../../services/tipos-documento.service';
+import { TiposDocumento } from '../../../models/TiposDocumento';
+import { TiposDocumentoService } from '../../../services/tipos-documento.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

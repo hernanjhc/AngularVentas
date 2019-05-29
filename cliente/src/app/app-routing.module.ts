@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { TiposDocumentoListComponent } from './components/tipos-documento-list/tipos-documento-list.component';
-import { TiposDocumentoFormComponent } from './components/tipos-documento-form/tipos-documento-form.component';
+import { TiposDocumentoListComponent } from './components/tipos-documento/tipos-documento-list/tipos-documento-list.component';
+import { TiposDocumentoFormComponent } from './components/tipos-documento/tipos-documento-form/tipos-documento-form.component';
 
 const routes: Routes = [
   {
