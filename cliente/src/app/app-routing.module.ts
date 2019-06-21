@@ -3,13 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { TiposDocumentoListComponent } from './components/tipos-documento/tipos-documento-list/tipos-documento-list.component';
 import { TiposDocumentoFormComponent } from './components/tipos-documento/tipos-documento-form/tipos-documento-form.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/TiposDocumento',
-    pathMatch: 'full'
-  },
+ 
   {
     path: 'TiposDocumento',
     component: TiposDocumentoListComponent
