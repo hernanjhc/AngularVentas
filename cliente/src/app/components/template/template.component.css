@@ -2,7 +2,9 @@
     DEMO STYLE
 */
 
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+/* @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"; */
+@import "https://fonts.googleapis.com/css?family=Allerta+Stencil&display=swap";
+@import "https://fonts.googleapis.com/css?family=Lato&display=swap";
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -63,6 +65,8 @@ a:focus {
     background: #f8f9fa;
     color: rgb(8, 8, 8);
     transition: all 0.3s;
+    border-radius: 0;
+    
 }
 
 #sidebar.active {
@@ -74,22 +78,29 @@ a:focus {
     /*background: #6d7fcc;*/
     background: #f1f1f1;
     color: #17a2b8;/*se cambia color*/
+    font-family: 'Allerta Stencil', sans-serif;
+
+  
 }
 
 #sidebar ul.components {
     padding: 20px 0;
     border-bottom: 1px solid #47748b;
+    
 }
 
 #sidebar ul p {
     color: #fff;
     padding: 10px;
+    
 }
 
 #sidebar ul li a {
     padding: 10px;
     font-size: 1.1em;
     display: block;
+    font-family: 'Lato', sans-serif;
+
 }
 
 #sidebar ul li a:hover {
@@ -102,6 +113,7 @@ a[aria-expanded="true"] {
     color: rgb(0, 0, 0);
     /*background: #6d7fcc;*/
     background: #f1f1f1;
+    
 }
 
 a[data-toggle="collapse"] {

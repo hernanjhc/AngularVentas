@@ -17,6 +17,7 @@
   </div>
 </div>            -->
 
+<div class="container">
 <section class="row mt-5">
   <div class="col">
     <br>
@@ -36,9 +37,10 @@
           <td>{{td.Id}}</td>
           <td>{{td.TipoDocumento}}</td>
           <td>  <a [routerLink]="['/TiposDocumento/edit', td.Id]" class="btn btn-info btn-block" (click)="editTipoDocumento(td.Id)">Editar</a>  </td>
-          <td>  <button class="btn btn-danger" (click)="deleteTipoDocumento(td.Id)">Eliminar</button> </td>
+          <td>  <button class="btn btn-danger btn-block" (click)="deleteTipoDocumento(td.Id)">Eliminar</button> </td>
         </tr>
       </tbody>
     </table>
   </div>
 </section>
+</div>
